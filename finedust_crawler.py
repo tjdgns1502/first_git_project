@@ -11,7 +11,7 @@ soup=BeautifulSoup(html,"lxml")
 ultrafinedust_table=soup.find_all('table',{"class":"tableMt"})
 print(len(ultrafinedust_table))
 print(type(ultrafinedust_table))
-print(type(ultrafinedust_table[0]))
+print(type(ultrafinedust_table[3]))
 
 ultrafinedust_table_tbody=ultrafinedust_table[3].find_all("tbody")
 #print(len(ultrafinedust_table_tbody))
@@ -65,6 +65,8 @@ ax1[0].set_ylabel("농도(단위:㎍/㎥)")
 
 ax1[1].set_title('월별 미세먼지 농도 자료')
 plt.plot(month_finedust_info)
+ax1[1].set_xlabel("2020년")
+ax1[1].set_ylabel("농도(단위:㎍/㎥)")
 
 ax1[0].set_xticks(x)
 ax1[0].set_xticklabels(month_list)
